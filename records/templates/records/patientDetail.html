@@ -1,0 +1,33 @@
+{% extends "records/base.html" %}
+{% block content %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">Case Number: {{ patient.CaseNumber }}</a>
+        </div>
+        <h5><div class="article-title">Patient Name: {{ patient.Name}}</div></h5>
+        <h5><div class="article-title">Identity Document Number: {{ patient.IdentityDocumentNumber}}</div></h5>
+        <h5><div class="article-title">Date Of Birth: {{ patient.DateOfBirth}}</div></h5>
+        <h5><div class="article-title">Date Case Confirmed: {{ patient.DateCaseConfirmed}}</div></h5>
+        <h5><div class="article-title">Case Number: {{ patient.CaseNumber}}</div></h5>
+      </div>
+    </article>
+	<br>
+    {% for location in locationList %}
+    	<div class="content-section">
+    		<h5>Location: {{location.LocationVisited}}</h5>
+			<ul class="list-group">
+			<li class="list-group-item list-group-item-light">Address: {{ location.Address}}</li>
+			<li class="list-group-item list-group-item-light">District: {{ location.District}}</li>
+			<li class="list-group-item list-group-item-light">XCoord: {{ location.XCoord}}</li>   
+			<li class="list-group-item list-group-item-light">YCoord: {{ location.YCoord}}</li>
+			<li class="list-group-item list-group-item-light">DateFrom: {{ location.DateFrom}}</li>	
+            <li class="list-group-item list-group-item-light">DateTo: {{ location.DateFrom}}</li>             
+			<li class="list-group-item list-group-item-light">Detail: {{ location.Detail}}</li>
+			<li class="list-group-item list-group-item-light">Category: {{ location.Category}}</li>       
+			</ul>
+	    </div> 
+	    <br>
+    {% endfor %}
+	
+{% endblock content %}
